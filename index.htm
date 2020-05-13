@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>ONS Basemaps Comparison</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    #menu-left {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #menu-right {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .menu {
+      background: #fff;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body * {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css" />
+  <div id="comparison-container">
+    <div id="before" class="map"></div>
+    <div id="after" class="map"></div>
+  </div>
+  <div id="menu-left" class="menu"></div>
+  <div id="menu-right" class="menu"></div>
+  <script>
+    const styles = [
+      {
+        'id': 'maptiler',
+        'name': 'MapTiler',
+        'url': './data/style-mt.json'
+      },
+      {
+        'id': 'openmaptiles',
+        'name': 'OpenMapTiles',
+        'url': './data/style-omt.json'
+      },
+      {
+        'id': 'zoomstack',
+        'name': 'OS Zoomstack',
+        'url': './data/style-os.json'
+      },
+      {
+        'id': 'mapbox',
+        'name': 'Mapbox',
+        'url': 'mapbox://styles/mapbox/light-v10'
+      },
+      {
+        'id': 'openstreetmap',
+        'name': 'OSM Raster',
+        'url': {
+          'version': 8,
+          'sources': {
+            'osm-tiles': {
+              'type': 'raster',
+              'tiles': [
+                'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'
+              ],
+              'tileSize': 256,
+              'attribution': '<a href="https://openstreetmap.org" target="_blank">OpenStreetMap</a>'
+            }
+          },
+          'layers': [
+            {
+              'id': 'osm-tiles',
+              'type': 'raster',
+              'source': 'osm-tiles',
+              'minzoom': 0,
+              'maxzoom': 17
+            }
+          ]
+        }
+      }
+    ]
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJrYmFyY2xheSIsImEiOiJjamdxeDF3ZXMzN2IyMnFyd3EwdGcwMDVxIn0.P2bkpp8HGNeY3-FOsxXVvA';
+    var mapLeft = new mapboxgl.Map({
+      container: 'before',
+      style: styles[0].url,
+      center: [-1.2471735, 50.8625412],
+      zoom: 14
+    });
+
+    var mapRight = new mapboxgl.Map({
+      container: 'after',
+      style: styles[0].url,
+      center: [-1.2471735, 50.8625412],
+      zoom: 14
+    });
+
+    // A selector or reference to HTML element
+    var container = '#comparison-container';
+
+    var map = new mapboxgl.Compare(mapLeft, mapRight, container, {
+      // Set this to enable comparing two maps by mouse movement:
+      // mousemove: true
+    });
+
+    // Function to get layer url by ID
+    function getLayer(id) {
+      let obj = styles.find(obj => obj.id == id);
+      return obj.url;
+    }
+
+    // Function to generate map options
+    function genOptions(side) {
+      let html = '';
+      for (style in styles) {
+        let checked = style == 0 ? ' checked="checked"' : '';
+        html += '<input value="' + styles[style].id + '" type="radio" name="' + side + '"' + checked + ' /><label for="' + styles[style].id + '">' + styles[style].name + '</label><br />';
+      }
+      document.getElementById(side).innerHTML = html;
+    }
+
+    genOptions('menu-left');
+    genOptions('menu-right');
+
+    var menuLeft = document.getElementById('menu-left');
+    var inputsLeft = menuLeft.getElementsByTagName('input');
+    var menuRight = document.getElementById('menu-right');
+    var inputsRight = menuRight.getElementsByTagName('input');
+
+    // Switch layer function
+    function switchLayer(value, map) {
+      let url = getLayer(value);
+      map.setStyle(url);
+    }
+
+    // Add event listeners
+    for (var i = 0; i < inputsLeft.length; i++) {
+      let value = inputsLeft[i].value;
+      inputsLeft[i].onclick = () => { switchLayer(value, mapLeft) };
+    }
+    for (var i = 0; i < inputsRight.length; i++) {
+      let value = inputsRight[i].value;
+      inputsRight[i].onclick = () => { switchLayer(value, mapRight) };
+    }
+  </script>
+
+</body>
+
+</html>
