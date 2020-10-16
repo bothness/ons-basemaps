@@ -4,7 +4,7 @@
     "esri": {
       "type": "raster",
       "tiles": [
-        "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}?blankTile=false"
+        "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}?blankTile=false"
       ],
       "tileSize": 256,
       "attribution": "ESRI World Imagery"
