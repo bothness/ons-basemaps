@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "sources": {
+    "esri": {
+      "type": "raster",
+      "tiles": [
+        "https://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{x}/{y}?blankTile=false"
+      ],
+      "tileSize": 256,
+      "attribution": "ESRI World Imagery"
+    }
+  },
+  "layers": [
+    {
+      "id": "esri",
+      "type": "raster",
+      "source": "esri",
+      "minzoom": 0,
+      "maxzoom": 14
+    }
+  ]
+}
