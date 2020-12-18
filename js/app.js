@@ -69,7 +69,9 @@ function switchOverlay(input, map) {
       });
     }
     for (layer in layers) {
-      map.addLayer(layers[layer]);
+      if (!map.getLayer(layers[layer].id)) {
+        map.addLayer(layers[layer]);
+      }
     }
   } else {
     for (layer in layers) {
