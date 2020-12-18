@@ -75,7 +75,9 @@ function switchOverlay(input, map) {
     }
   } else {
     for (layer in layers) {
-      map.removeLayer(layers[layer].id);
+      if (map.getLayer(layers[layer].id)) {
+        map.removeLayer(layers[layer].id);
+      }
     }
   }
 }
