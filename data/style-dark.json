@@ -259,10 +259,7 @@
         "symbol-placement": "line",
         "text-rotation-alignment": "map",
         "symbol-spacing": 500,
-        "text-font": [
-          "Open Sans Medium Italic",
-          "Open Sans Italic"
-        ],
+        "text-font": ["Noto Sans Italic"],
         "text-size": 12
       },
       "paint": {
@@ -1126,10 +1123,7 @@
         "text-max-angle": 30,
         "text-transform": "none",
         "symbol-spacing": 350,
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "symbol-placement": "line",
         "visibility": "visible",
         "text-rotation-alignment": "map",
@@ -1171,10 +1165,7 @@
       "layout": {
         "text-size": 10,
         "symbol-spacing": 350,
-        "text-font": [
-          "Open Sans Light",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "symbol-placement": "line",
         "visibility": "visible",
         "text-rotation-alignment": "viewport",
@@ -1305,10 +1296,7 @@
       "layout": {
         "text-size": 10,
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "center",
         "visibility": "visible",
         "text-offset": [
@@ -1350,10 +1338,7 @@
       "layout": {
         "text-size": 10,
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "center",
         "visibility": "visible",
         "text-offset": [
@@ -1395,10 +1380,7 @@
       "layout": {
         "text-size": 10,
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [
@@ -1455,10 +1437,7 @@
           ]
         },
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [
@@ -1532,10 +1511,7 @@
           ]
         },
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [
@@ -1609,10 +1585,7 @@
           ]
         },
         "text-transform": "none",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [
@@ -1668,10 +1641,7 @@
       "layout": {
         "visibility": "visible",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-transform": "none",
         "text-size": 10
       },
@@ -1711,10 +1681,7 @@
       "layout": {
         "visibility": "visible",
         "text-field": "{name:latin}",
-        "text-font": [
-          "Open Sans Light Italic",
-          "Open Sans Italic"
-        ],
+        "text-font": ["Noto Sans Italic"],
         "text-transform": "none",
         "text-size": {
           "base": 1,
@@ -1770,10 +1737,7 @@
       "layout": {
         "visibility": "visible",
         "text-field": "{name:latin}",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-transform": "none",
         "text-size": {
           "base": 1,
@@ -1829,10 +1793,7 @@
       "layout": {
         "visibility": "visible",
         "text-field": "{name:latin}",
-        "text-font": [
-          "Open Sans Regular",
-          "Open Sans Regular"
-        ],
+        "text-font": ["Noto Sans Regular"],
         "text-transform": "none",
         "text-size": {
           "base": 1.4,
