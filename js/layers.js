@@ -1785,7 +1785,7 @@ const overLayers = [
         22,
         28
       ],
-      "text-font": ["Noto Sans Regular"],
+      "text-font": ["Noto Sans Bold"],
       "text-letter-spacing": 0.1,
       "symbol-spacing": ["interpolate", ["linear"], ["zoom"], 9, 50, 15, 250]
     },
@@ -1821,7 +1821,7 @@ const overLayers = [
         22,
         28
       ],
-      "text-font": ["Noto Sans Regular"],
+      "text-font": ["Noto Sans Bold"],
       "text-letter-spacing": 0.1,
       "symbol-spacing": ["interpolate", ["linear"], ["zoom"], 8, 50, 15, 250]
     },
@@ -1853,7 +1853,7 @@ const overLayers = [
         22,
         30
       ],
-      "text-font": ["Noto Sans Regular"]
+      "text-font": ["Noto Sans Bold"]
     },
     "paint": {
       "text-color": "#ffffff",
