@@ -13,12 +13,12 @@
   "sources": {
     "composite": {
       "type": "vector",
-      "url": "https://api.maptiler.com/tiles/uk-openzoomstack/tiles.json?key=itRIjT2UWTbpcSI8BSvg",
+      "tiles": ["https://cdn.ons.gov.uk/maptiles/zoomstack/v2/{z}/{x}/{y}.pbf"],
       "minzoom": 5
     }
   },
-  "sprite": "https://openmaptiles.github.io/positron-gl-style/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key=itRIjT2UWTbpcSI8BSvg",
+  "sprite": "https://bothness.github.io/ons-basemaps/data/sprite",
+  "glyphs": "https://cdn.ons.gov.uk/maptiles/osm/fontsv1/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -418,7 +418,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": ["to-string", ["get", "number"]],
-        "text-font": ["Source Sans Pro Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-max-angle": 45,
         "text-size": [
           "interpolate",
@@ -468,7 +468,7 @@
           250
         ],
         "text-field": ["to-string", ["get", "name"]],
-        "text-font": ["Source Sans Pro Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-max-angle": 82,
         "text-padding": 1,
         "text-size": [
@@ -503,7 +503,7 @@
         "symbol-placement": "line",
         "symbol-spacing": ["interpolate", ["linear"], ["zoom"], 9, 50, 15, 250],
         "text-field": ["to-string", ["get", "number"]],
-        "text-font": ["Source Sans Pro SemiBold", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-letter-spacing": 0.1,
         "text-max-angle": 65,
         "text-size": [
@@ -538,7 +538,7 @@
         "symbol-placement": "line",
         "symbol-spacing": ["interpolate", ["linear"], ["zoom"], 8, 50, 15, 250],
         "text-field": ["to-string", ["get", "number"]],
-        "text-font": ["Source Sans Pro SemiBold", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-letter-spacing": 0.1,
         "text-max-angle": 45,
         "text-size": [
@@ -573,7 +573,7 @@
       "filter": ["match", ["get", "type"], ["Motorway Junctions"], true, false],
       "layout": {
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Source Sans Pro Bold", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Bold"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -603,7 +603,7 @@
       "filter": ["match", ["get", "type"], ["Water"], true, false],
       "layout": {
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Source Sans Pro Italic", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Italic"],
         "text-line-height": 1,
         "text-size": ["interpolate", ["linear"], ["zoom"], 11, 9, 14, 11],
         "visibility": "none"
@@ -626,7 +626,7 @@
       "filter": ["match", ["get", "type"], ["Suburban Area"], true, false],
       "layout": {
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Open Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-line-height": 1,
         "text-size": {"stops": [[10, 10], [18, 10]]},
         "visibility": "visible"
@@ -648,7 +648,7 @@
       "layout": {
         "text-anchor": "left",
         "text-field": ["to-string", ["get", "name"]],
-        "text-font": ["Source Sans Pro Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "text-line-height": 1,
         "text-offset": [
@@ -698,7 +698,7 @@
       "layout": {
         "text-anchor": "left",
         "text-field": ["to-string", ["get", "name"]],
-        "text-font": ["Source Sans Pro Regular", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "text-offset": [0.8, 0],
         "text-size": ["interpolate", ["linear"], ["zoom"], 10, 9, 15, 13],
@@ -724,7 +724,7 @@
         "symbol-avoid-edges": true,
         "symbol-spacing": 250,
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Open Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-line-height": 1,
         "text-padding": 2,
         "text-size": {"stops": [[11, 10], [18, 10]]},
@@ -750,7 +750,7 @@
       "layout": {
         "symbol-avoid-edges": false,
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Open Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-line-height": 1,
         "text-padding": 2,
         "text-size": {"stops": [[9, 10], [12, 10]]},
@@ -777,7 +777,7 @@
         "text-size": ["interpolate", ["linear"], ["zoom"], 6, 10, 11, 12],
         "icon-image": {"base": 1, "stops": [[0, "circle-11"], [8, ""]]},
         "text-transform": "none",
-        "text-font": ["Open Sans", "Noto Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [0.5, 0.2],
@@ -804,7 +804,7 @@
       "filter": ["match", ["get", "type"], ["National Park"], true, false],
       "layout": {
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Source Sans Pro SemiBold", "Arial Unicode MS Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-letter-spacing": 0.06,
         "text-line-height": 1,
         "text-padding": 2,
@@ -832,7 +832,7 @@
         "text-size": 14,
         "icon-image": {"base": 1, "stops": [[0, "star-11"], [8, ""]]},
         "text-transform": "none",
-        "text-font": ["Open Sans", "Noto Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-justify": "left",
         "visibility": "visible",
         "text-offset": [0.5, 0.2],
@@ -859,7 +859,7 @@
       "filter": ["match", ["get", "type"], ["Country"], true, false],
       "layout": {
         "text-field": ["to-string", ["get", "name1"]],
-        "text-font": ["Open Sans Regular"],
+        "text-font": ["Noto Sans Regular"],
         "text-letter-spacing": 0.3,
         "text-line-height": 1,
         "text-padding": 2,
