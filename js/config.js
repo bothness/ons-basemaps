@@ -132,7 +132,7 @@ const overlays = [
   {
     'id': 'composite',
     'name': 'OS Roads 2020 (overlay)',
-    'url': 'https://api.maptiler.com/tiles/uk-openzoomstack/tiles.json?key=itRIjT2UWTbpcSI8BSvg',
+    'tiles': ["https://cdn.ons.gov.uk/maptiles/zoomstack/v2/{z}/{x}/{y}.pbf"],
     'layers': overLayers
   }
 ];

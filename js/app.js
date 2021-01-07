@@ -52,20 +52,29 @@ var overlaysRight = document.getElementsByName('menu-right-overlays');
 function switchLayer(value, map) {
   let url = getLayer(value);
   map.setStyle(url);
-  refreshOverlays(map);
+  (function() {
+    const waiting = () => {
+      if (!map.isStyleLoaded()) {
+        setTimeout(waiting, 200);
+      } else {
+        refreshOverlays(map);
+      }
+    };
+    waiting();
+  })();
 }
 
 // Switch overlays function
 function switchOverlay(input, map) {
   let overlay = overlays.filter(d => d.id == input.value)[0];
   let id = overlay.id;
-  let url = overlay.url;
+  let tiles = overlay.tiles;
   let layers = overlay.layers;
   if (input.checked) {
     if (!map.getSource(id)) {
       map.addSource(id, {
         'type': 'vector',
-        'url': url
+        'tiles': tiles
       });
     }
     for (layer in layers) {
@@ -83,21 +92,21 @@ function switchOverlay(input, map) {
 }
 
 function refreshOverlays(map) {
-  map.on('style.load', () => {
-    if (map == mapLeft) {
-      for (i in overlaysLeft) {
-        if (overlaysLeft[i].checked) {
-          switchOverlay(overlaysLeft[i], map);
-        }
-      }
-    } else if (map == mapRight) {
-      for (i in overlaysRight) {
-        if (overlaysRight[i].checked) {
-          switchOverlay(overlaysRight[i], map);
-        }
+  console.log('refreshing');
+  if (map == mapLeft) {
+    for (i in overlaysLeft) {
+      if (overlaysLeft[i].checked) {
+        console.log('overlay on');
+        switchOverlay(overlaysLeft[i], map);
       }
     }
-  });
+  } else if (map == mapRight) {
+    for (i in overlaysRight) {
+      if (overlaysRight[i].checked) {
+        switchOverlay(overlaysRight[i], map);
+      }
+    }
+  }
 }
 
 // Add event listeners
