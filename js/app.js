@@ -32,11 +32,12 @@ function getLayer(id) {
 
 // Function to generate map options
 function genOptions(side) {
-  let html = '';
+  let html = `<select name="${side}">`;
   for (style in styles) {
-    let checked = style == 0 ? ' checked="checked"' : '';
-    html += '<input value="' + styles[style].id + '" type="radio" name="' + side + '"' + checked + ' /><label for="' + styles[style].id + '">' + styles[style].name + '</label><br />';
+    let selected = style == 0 ? ' selected' : '';
+    html += '<option value="' + styles[style].id + '"' + selected + ' />' + styles[style].name + '</option>';
   }
+  html += '</select>';
   for (overlay in overlays) {
     html += '<hr/><input value="' + overlays[overlay].id + '" type="checkbox" name="' + side + '-overlays" /><label for="' + overlays[overlay].id + '">' + overlays[overlay].name + '</label><br />';
   }
@@ -46,8 +47,8 @@ function genOptions(side) {
 genOptions('menu-left');
 genOptions('menu-right');
 
-var inputsLeft = document.getElementsByName('menu-left');
-var inputsRight = document.getElementsByName('menu-right');
+var inputsLeft = document.getElementsByName('menu-left')[0];
+var inputsRight = document.getElementsByName('menu-right')[0];
 
 var overlaysLeft = document.getElementsByName('menu-left-overlays');
 var overlaysRight = document.getElementsByName('menu-right-overlays');
@@ -116,14 +117,9 @@ function refreshOverlays(map) {
 }
 
 // Add event listeners
-for (var i = 0; i < inputsLeft.length; i++) {
-  let value = inputsLeft[i].value;
-  inputsLeft[i].onclick = () => { switchLayer(value, mapLeft) };
-}
-for (var i = 0; i < inputsRight.length; i++) {
-  let value = inputsRight[i].value;
-  inputsRight[i].onclick = () => { switchLayer(value, mapRight) };
-}
+inputsLeft.onchange = () => { switchLayer(inputsLeft.value, mapLeft) };
+inputsRight.onchange = () => { switchLayer(inputsLeft.value, mapRight) };
+
 for (var i = 0; i < overlaysLeft.length; i++) {
   let value = overlaysLeft[i].value;
   overlaysLeft[i].onclick = (e) => { switchOverlay(e.target, mapLeft) };
