@@ -118,7 +118,7 @@ function refreshOverlays(map) {
 
 // Add event listeners
 inputsLeft.onchange = () => { switchLayer(inputsLeft.value, mapLeft) };
-inputsRight.onchange = () => { switchLayer(inputsLeft.value, mapRight) };
+inputsRight.onchange = () => { switchLayer(inputsRight.value, mapRight) };
 
 for (var i = 0; i < overlaysLeft.length; i++) {
   let value = overlaysLeft[i].value;
