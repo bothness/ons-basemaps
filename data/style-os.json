@@ -13,8 +13,9 @@
   "sources": {
     "composite": {
       "type": "vector",
-      "tiles": ["https://cdn.ons.gov.uk/maptiles/zoomstack/v2/{z}/{x}/{y}.pbf"],
-      "minzoom": 5
+      "tiles": ["https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/{z}/{x}/{y}.pbf"],
+      "maxzoom": 14,
+      "attribution": "<a href=\"https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack\" target=\"_blank\">&copy; Ordnance Survey</a>"
     }
   },
   "sprite": "https://bothness.github.io/ons-basemaps/data/sprite",

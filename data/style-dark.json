@@ -30,7 +30,7 @@
       "buffer": 0,
       "minzoom": 0,
       "maxzoom": 14,
-      "attribution": "<a href=\"https://www.openstreetmap.org\" target=\"_blank\">OpenStreetMap</a>"
+      "attribution": "<a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>"
     }
   },
   "sprite": "https://openmaptiles.github.io/positron-gl-style/sprite",

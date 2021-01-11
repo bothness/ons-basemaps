@@ -1,5 +1,20 @@
 const styles = [
   {
+    'id': 'zoomstack-roads',
+    'name': 'OS Zoomstack (roads style)',
+    'url': './data/style-roads.json'
+  },
+  {
+    'id': 'zoomstack-outdoor',
+    'name': 'OS Zoomstack (outdoor style)',
+    'url': './data/style-outdoor.json'
+  },
+  {
+    'id': 'zoomstack-ons',
+    'name': 'OS Zoomstack (ONS style)',
+    'url': './data/style-os.json'
+  },
+  {
     'id': 'ons-light',
     'name': 'OpenMapTiles (ONS style)',
     'url': './data/style-omt.json'
@@ -8,16 +23,6 @@ const styles = [
     'id': 'ons-dark',
     'name': 'OpenMapTiles (ONS dark)',
     'url': './data/style-dark.json'
-  },
-  {
-    'id': 'zoomstack-ons',
-    'name': 'OS Zoomstack (ONS style)',
-    'url': './data/style-os.json'
-  },
-  {
-    'id': 'zoomstack-outdoor',
-    'name': 'OS Zoomstack (outdoor style)',
-    'url': './data/style-outdoor.json'
   },
   {
     'id': 'os-1900',
@@ -31,7 +36,7 @@ const styles = [
             'https://nls-1.tileserver.com/fpsUZbqQLWLT/{z}/{x}/{y}.png'
           ],
           'tileSize': 256,
-          'attribution': '<a href="https://maps.nls.uk/geo/explore/side-by-side/" target="_blank">Ordnance Survey / National Library of Scotland</a>',
+          'attribution': '<a href="https://maps.nls.uk/geo/explore/side-by-side/" target="_blank">National Library of Scotland / &copy; Ordnance Survey</a>',
           'maxzoom': 17
         }
       },
@@ -58,7 +63,7 @@ const styles = [
             'https://nls-1.tileserver.com/fpsUZbIoj0Oa/{z}/{x}/{y}.png'
           ],
           'tileSize': 256,
-          'attribution': '<a href="https://maps.nls.uk/geo/explore/side-by-side/" target="_blank">Ordnance Survey / National Library of Scotland</a>',
+          'attribution': '<a href="https://maps.nls.uk/geo/explore/side-by-side/" target="_blank">National Library of Scotland / &copy; Ordnance Survey</a>',
           'maxzoom': 15
         }
       },
@@ -86,7 +91,7 @@ const styles = [
           ],
           'tileSize': 256,
           'attribution': 'ESRI World Imagery',
-          'maxzoom': 14
+          'maxzoom': 17
         }
       },
       'layers': [
@@ -112,7 +117,7 @@ const styles = [
             'https://a.tile.openstreetmap.org/{z}/{x}/{y}.png'
           ],
           'tileSize': 256,
-          'attribution': '<a href="https://openstreetmap.org" target="_blank">OpenStreetMap</a>',
+          'attribution': '<a href="https://openstreetmap.org" target="_blank">&copy; OpenStreetMap</a>',
           'maxzoom': 17
         }
       },
@@ -132,7 +137,9 @@ const overlays = [
   {
     'id': 'composite',
     'name': 'OS Roads 2020 (overlay)',
-    'tiles': ["https://cdn.ons.gov.uk/maptiles/zoomstack/v2/{z}/{x}/{y}.pbf"],
+    'tiles': ["https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/{z}/{x}/{y}.pbf"],
+    'maxzoom': 14,
+    'attribution': '<a href="https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack" target="_blank">&copy; Ordnance Survey</a>',
     'layers': overLayers
   }
 ];

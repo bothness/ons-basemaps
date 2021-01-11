@@ -2,14 +2,18 @@ var mapLeft = new mapboxgl.Map({
   container: 'before',
   style: styles[0].url,
   center: [-1.2471735, 50.8625412],
-  zoom: 13
+  zoom: 13,
+  maxZoom: 16,
+  attributionControl: false
 });
+mapLeft.addControl(new mapboxgl.AttributionControl(), 'bottom-left');
 
 var mapRight = new mapboxgl.Map({
   container: 'after',
   style: styles[0].url,
   center: [-1.2471735, 50.8625412],
-  zoom: 13
+  zoom: 13,
+  maxZoom: 16
 });
 
 // A selector or reference to HTML element
@@ -69,12 +73,16 @@ function switchOverlay(input, map) {
   let overlay = overlays.filter(d => d.id == input.value)[0];
   let id = overlay.id;
   let tiles = overlay.tiles;
+  let maxzoom = overlay.maxzoom;
+  let attribution = overlay.attribution;
   let layers = overlay.layers;
   if (input.checked) {
     if (!map.getSource(id)) {
       map.addSource(id, {
         'type': 'vector',
-        'tiles': tiles
+        'tiles': tiles,
+        'maxzoom': maxzoom,
+        'attribution': attribution
       });
     }
     for (layer in layers) {
@@ -92,11 +100,9 @@ function switchOverlay(input, map) {
 }
 
 function refreshOverlays(map) {
-  console.log('refreshing');
   if (map == mapLeft) {
     for (i in overlaysLeft) {
       if (overlaysLeft[i].checked) {
-        console.log('overlay on');
         switchOverlay(overlaysLeft[i], map);
       }
     }
