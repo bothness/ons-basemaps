@@ -1,0 +1,21 @@
+{
+  "version": 8,
+  "sources": {
+    "os-1937": {
+      "type": "raster",
+      "tiles": [
+        "https://nls-1.tileserver.com/fpsUZbIoj0Oa/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland / &copy; Ordnance Survey</a>",
+      "maxzoom": 15
+    }
+  },
+  "layers": [
+    {
+      "id": "os-1937",
+      "type": "raster",
+      "source": "os-1937"
+    }
+  ]
+}

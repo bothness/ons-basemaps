@@ -1,0 +1,21 @@
+{
+  "version": 8,
+  "sources": {
+    "os-1900": {
+      "type": "raster",
+      "tiles": [
+        "https://nls-1.tileserver.com/fpsUZbqQLWLT/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland / &copy; Ordnance Survey</a>",
+      "maxzoom": 17
+    }
+  },
+  "layers": [
+    {
+      "id": "os-1900",
+      "type": "raster",
+      "source": "os-1900"
+    }
+  ]
+}

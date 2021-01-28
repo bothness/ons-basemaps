@@ -42,7 +42,7 @@
       "attribution": "<a href=\"https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack\" target=\"_blank\">&copy; Ordnance Survey</a>"
     }
   },
-  "sprite": "https://bothness.github.io/ons-basemaps/data/os/sprites",
+  "sprite": "https://bothness.github.io/ons-basemaps/data/sprite",
   "glyphs": "https://cdn.ons.gov.uk/maptiles/osm/fontsv1/{fontstack}/{range}.pbf",
   "layers": [
     {
