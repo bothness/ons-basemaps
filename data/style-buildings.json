@@ -1,0 +1,43 @@
+{
+  "version": 8,
+  "name": "OS Buildings Overlay",
+  "metadata": {
+    "mapbox:autocomposite": true,
+    "mapbox:type": "template",
+    "mapbox:sdk-support": {"js": "0.50.0", "android": "6.7.0", "ios": "4.6.0"},
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "composite": {
+      "tiles": ["https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/{z}/{x}/{y}.pbf"],
+      "type": "vector",
+      "maxzoom": 14,
+      "attribution": "<a href=\"https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack\" target=\"_blank\">&copy; Ordnance Survey</a>"
+    }
+  },
+  "sprite": "https://bothness.github.io/ons-basemaps/data/sprite",
+  "glyphs": "https://cdn.ons.gov.uk/maptiles/osm/fontsv1/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "urban-areas",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "urban_areas",
+      "maxzoom": 11,
+      "layout": {},
+      "paint": {
+        "fill-color": "rgba(0,0,0,0.5)",
+        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 6, 0.4, 11, 0.6]
+      }
+    },
+    {
+      "id": "buildings 2D",
+      "type": "fill",
+      "source": "composite",
+      "source-layer": "buildings",
+      "maxzoom": 24,
+      "layout": {},
+      "paint": {"fill-color": "rgba(0,0,0,0.5)", "fill-translate": [0, 0]}
+    }
+  ]
+}
