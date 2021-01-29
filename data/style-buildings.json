@@ -26,8 +26,7 @@
       "maxzoom": 11,
       "layout": {},
       "paint": {
-        "fill-color": "rgba(0,0,0,0.5)",
-        "fill-opacity": ["interpolate", ["linear"], ["zoom"], 6, 0.4, 11, 0.6]
+        "fill-color": "rgba(0,0,0,0.5)"
       }
     },
     {
@@ -37,7 +36,9 @@
       "source-layer": "buildings",
       "maxzoom": 24,
       "layout": {},
-      "paint": {"fill-color": "rgba(0,0,0,0.5)", "fill-translate": [0, 0]}
+      "paint": {
+        "fill-color": "rgba(0,0,0,0.5)"
+      }
     }
   ]
 }
