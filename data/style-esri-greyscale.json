@@ -18,7 +18,8 @@
       "type": "raster",
       "source": "esri",
       "paint": {
-        "raster-saturation": -1
+        "raster-saturation": -1,
+        "raster-opacity": 0.5
       }
     }
   ]
