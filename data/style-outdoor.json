@@ -36,7 +36,7 @@
   "light": {"intensity": 0.25, "color": "hsl(0, 0%, 100%)"},
   "sources": {
     "composite": {
-      "tiles": ["https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://cdn.ons.gov.uk/maptiles/zoomstack/v3/{z}/{x}/{y}.pbf"],
       "type": "vector",
       "maxzoom": 14,
       "attribution": "<a href=\"https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack\" target=\"_blank\">&copy; Ordnance Survey</a>"
