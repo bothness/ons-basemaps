@@ -13,7 +13,7 @@
   "sources": {
     "composite": {
       "type": "vector",
-      "tiles": ["https://s3-eu-west-1.amazonaws.com/tiles.os.uk/v2/data/vector/open-zoomstack/{z}/{x}/{y}.pbf"],
+      "tiles": ["https://cdn.ons.gov.uk/maptiles/zoomstack/v3/{z}/{x}/{y}.pbf"],
       "maxzoom": 14,
       "attribution": "<a href=\"https://www.ordnancesurvey.co.uk/business-government/products/open-zoomstack\" target=\"_blank\">&copy; Ordnance Survey</a>"
     }
