@@ -1,21 +1,70 @@
 {
   "version": 8,
+	"sprite": "https://bothness.github.io/ons-basemaps/data/sprite",
+  "glyphs": "https://cdn.ons.gov.uk/maptiles/osm/fontsv1/{fontstack}/{range}.pbf",
   "sources": {
-    "os-1937": {
+    "1960s-low": {
       "type": "raster",
       "tiles": [
-        "https://nls-1.tileserver.com/fpsUZbIoj0Oa/{z}/{x}/{y}.png"
+        "https://mapseries-tilesets.s3.amazonaws.com/ten_mile/roads_56/{z}/{x}/{y}.png"
       ],
       "tileSize": 256,
-      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland / &copy; Ordnance Survey</a>",
-      "maxzoom": 15
+      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland | &copy; Ordnance Survey</a>",
+      "maxzoom": 10
+    },
+		"1960s-med": {
+      "type": "raster",
+      "tiles": [
+        "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg?key=ncUdmgc5zRybmdoXhFDX"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland | &copy; Ordnance Survey</a>",
+      "maxzoom": 13
+    },
+		"1960s-hi": {
+      "type": "raster",
+      "tiles": [
+        "https://api.maptiler.com/tiles/uk-osgb25k1937/{z}/{x}/{y}.jpg?key=ncUdmgc5zRybmdoXhFDX"
+      ],
+      "tileSize": 256,
+      "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland | &copy; Ordnance Survey</a>",
+      "maxzoom": 16
+		},
+		"openmaptiles": {
+      "type": "vector",
+      "tiles": [
+        "https://cdn.ons.gov.uk/maptiles/osm/v2/{z}/{x}/{y}.pbf"
+      ],
+      "buffer": 0,
+      "minzoom": 0,
+      "maxzoom": 14,
+      "attribution": "<a href=\"https://www.openstreetmap.org\" target=\"_blank\">&copy; OpenStreetMap</a>"
     }
   },
   "layers": [
+		{
+      "id": "background",
+      "type": "background",
+      "paint": {"background-color": "rgb(242,243,240)"}
+    },
     {
-      "id": "os-1937",
+      "id": "1960s-low",
       "type": "raster",
-      "source": "os-1937"
+      "source": "1960s-low",
+			"maxzoom": 9.999
+    },
+		{
+      "id": "1960s-med",
+      "type": "raster",
+      "source": "1960s-med",
+			"minzoom": 10,
+			"maxzoom": 12.999
+    },
+		{
+      "id": "1960s-hi",
+      "type": "raster",
+      "source": "1960s-hi",
+			"minzoom": 13
     }
   ]
 }

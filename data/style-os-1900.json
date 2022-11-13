@@ -4,7 +4,7 @@
     "os-1900": {
       "type": "raster",
       "tiles": [
-        "https://nls-1.tileserver.com/fpsUZbqQLWLT/{z}/{x}/{y}.png"
+        "https://api.maptiler.com/tiles/uk-osgb1888/{z}/{x}/{y}?key=ncUdmgc5zRybmdoXhFDX"
       ],
       "tileSize": 256,
       "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland / &copy; Ordnance Survey</a>",
