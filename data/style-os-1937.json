@@ -15,7 +15,7 @@
 		"1960s-med": {
       "type": "raster",
       "tiles": [
-        "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg?key=ncUdmgc5zRybmdoXhFDX"
+        "https://api.maptiler.com/tiles/uk-osgb63k1955/{z}/{x}/{y}.jpg"
       ],
       "tileSize": 256,
       "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland | &copy; Ordnance Survey</a>",
@@ -24,7 +24,7 @@
 		"1960s-hi": {
       "type": "raster",
       "tiles": [
-        "https://api.maptiler.com/tiles/uk-osgb25k1937/{z}/{x}/{y}.jpg?key=ncUdmgc5zRybmdoXhFDX"
+        "https://api.maptiler.com/tiles/uk-osgb25k1937/{z}/{x}/{y}.jpg"
       ],
       "tileSize": 256,
       "attribution": "<a href=\"https://maps.nls.uk/geo/explore/side-by-side/\" target=\"_blank\">National Library of Scotland | &copy; Ordnance Survey</a>",
